@@ -2,6 +2,28 @@ Lynn Cook's Learning Blog
 for
 Back-End Web Development
 
+Wed 26 Jun 2013
+
+object == thing
+in Ruby everything is an object
+you can ask an object what class it belongs to by calling 
+
+chair - class
+class has attributes
+all classes are types of objects
+
+division operator is a method of FixedNum
+
+in Ruby
+- everything is an object
+- everything returns a value
+
+because everything is an object you can call a method on it, do method chaining
+
+write in pseudo code, very straightforward ordinary language
+think about edge cases, things that might go wrong
+
+
 25 June 2013
 
 making and running a .sh script
@@ -84,7 +106,6 @@ cmd space - spotlight - useful for finding files and applications quickly
 notes - Ruby on Rails
 
 37Signals building Basecamp, got David Heinemeier Hansson to build the web app bit, which he did using Ruby and developed Ruby on Rails as a web framework in the process. Interesting!
-
 
 
 
