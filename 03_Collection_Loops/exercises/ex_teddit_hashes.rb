@@ -14,4 +14,31 @@
 # Use a loop, so that your program continues to ask a user for stories until they chose to quit. ("Would you like to add another story? Enter 'y' or 'n'")
 # Once the user is finished with entering their stories, use .each to print each story in the stories array. 
 #
-#
+def welcome_user
+	puts "Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!\nWhat's your story?"	
+end
+
+
+def calculate_votes(title)
+	if title.include? "cats"
+		votes = 1*5
+	elsif title.include? "bacon"
+		votes = 1*8
+	elsif title.include? "food"
+		votes = 1*3
+	else
+		votes = 1
+	end
+end
+
+
+def print_story(title, votes)
+	puts "#{title}\nCurrent upvotes: #{calculate_votes(title)}"
+end
+
+stories = []
+story = {}
+
+welcome_user
+title = gets.chomp.downcase
+print_story(title.capitalize, 0)
