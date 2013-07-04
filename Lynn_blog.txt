@@ -2,6 +2,81 @@ Lynn Cook's Learning Blog
 for
 Back-End Web Development
 
+Wed 3 Jul 2013
+
+Arrays
+
+square brackets
+collection of things
+
+pigeon holes w objects in them
+
+arrays reference their objects with numbers, they're indexed
+whereas, hashes reference their objects with a key, eg first_name => "Ben"
+
+****
+
+FizzBuzz
+
+case statements
+	def fizzbuzz(num)
+	case
+	when num % 5 == 0 && num % 3 == 0
+		"FizzBuzz"
+	when num % 3 == 0
+		"Fizz"
+	when num % 5 == 0
+		"Buzz"
+	end
+
+
+alternative ways 
+
+	if x == y
+		puts "hello"
+	end
+
+	puts "hello" if x == y
+
+****
+JSON
+
+JavaScript Object Notation
+
+rubygems.org
+
+gem == ruby.package
+
+HTTPI is a gem
+
+API - application programming interface
+
+***
+
+before we write code work out what we want it to do
+
+1. get json from reddit
+2. parse json to hash
+3. print stories to a terminal
+
+***
+
+variables - lower case
+methods - lower case
+
+class - start with capital letter eg HTTPI
+
+jsonviewer.stack.hu
+
+***
+
+I'm completely lost with this, well not completely but quite lost. There's this thing called mapping which Ben has done so that his feeds from the 3 different sources work in the same way ... I've copied out his code for Digg ... I need to look at the parts
+
+***
+
+introduce methods, looping and arrays into the Secret Number Game
+and generate a random number
+
 Wed 26 Jun 2013
 
 object == thing
