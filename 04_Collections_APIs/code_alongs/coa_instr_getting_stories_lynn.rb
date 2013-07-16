@@ -4,7 +4,6 @@ require 'httpi'
 require 'json'
 
 # digg.com/api/news/
-
 # 1. get json
 # from reddit
 def get_reddit_feed
