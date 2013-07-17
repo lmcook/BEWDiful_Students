@@ -4,9 +4,16 @@
 # object oriented, instantiate modeled classes in separate files
 # push code on GitHub
 
-# use digg api to display custom list of stories
-# specify particular tags that the user can ask for
-# user can ask for most recent, highest ranking, or for a particular tag
+# 1. use digg api
+# class to get digg feed
+# 2. display currently available story tags
+# class to display story tags
+# 3. ask user which tags they are interested in: individual, set or all
+# class to communicate with user
+# 4. display story info for selected tags
+# class to display selected stories
+# 5. ask user if they'd like to make a new selection, save their current selection to file, or quit
+# class to communicate with user - same as before?
 
 require 'httpi'
 require 'json'
@@ -25,40 +32,56 @@ def parse_digg_feed(raw_response)
 	JSON.parse(raw_response)
 end
 
+# print story tags to terminal
+
+def print_digg_tags(stories)
+	puts "These are the currently available story tags:"
+	stories.each do |story|
+		print_tags(story)
+	end
+	puts
+end
+
+# ask for user input
+
+def user_select
+	puts "Choose a tag!"
+	choice = gets.chomp
+	puts
+end
+
 # print stories to terminal
 
 def print_digg_stories(stories)
 	stories.each do |story|
 		print_digg_story(story)
-		print_tags(story)
+		puts "Tags: " + print_tags(story).to_s
+		puts
 		puts
 	end
 end
 
 def print_digg_story(story)
 	puts "Title: #{story["content"]["title"]}"
+	puts "Author: #{story["content"]["author"]}" 
 	puts "Description: #{story["content"]["description"]}"
-	puts "Votes: #{story["digg_score"]}"
+	puts "Source: #{story["content"]["domain"]}"
+	puts "URL: #{story["content"]["url"]}"
 end
 
 def print_tags(story)
 	tag = story["content"]["tags"]
-	puts "Category: #{tag[0]["display"]}"
-
-	tag.each {|x| print x["display"], " - " }
-
-	# if tag[1]["display"] == nil
-	# 	puts "There is only one tag for this story."
-	# elsif tag[1]["display"] != nil
-	# 	puts "Category: #{tag[1]["display"]}"
-	# 	puts "There is only one tag for this story."
-	# end
-
+	tag.each do |x|
+		# x["display"], " "
+		print x["display"], " "
+	end
 end
 
 raw_response = get_digg_feed
 response = parse_digg_feed(raw_response)
 print_digg_stories(response["data"]["feed"])
+# print_digg_tags(response["data"]["feed"])
+# user_select
 
 
 
