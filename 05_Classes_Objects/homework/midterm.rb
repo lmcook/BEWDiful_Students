@@ -4,8 +4,7 @@
 # object oriented, instantiate modeled classes in separate files
 # push code on GitHub
 
-# 1. use digg api
-# class to get digg feed
+
 # 2. display currently available story tags
 # class to display story tags
 # 3. ask user which tags they are interested in: individual, set or all
@@ -15,21 +14,27 @@
 # 5. ask user if they'd like to make a new selection, save their current selection to file, or quit
 # class to communicate with user - same as before?
 
+# 1. use digg api
+# class to get digg feed
+
 require 'httpi'
 require 'json'
 
-# get json from digg
+class GetDiggFeed
+	# get json from digg
 
-def get_digg_feed
-	request = HTTPI::Request.new
-	request.url = "http://digg.com/api/news/popular.json"
-	HTTPI.get(request).body	
-end
+	def get_digg_feed
+		request = HTTPI::Request.new
+		request.url = "http://digg.com/api/news/popular.json"
+		HTTPI.get(request).body	
+	end
 
-# parse json to hash
+	# parse json to hash
 
-def parse_digg_feed(raw_response)
-	JSON.parse(raw_response)
+	def parse_digg_feed(raw_response)
+		JSON.parse(raw_response)
+	end
+
 end
 
 # print story tags to terminal
@@ -76,6 +81,7 @@ def print_tags(story)
 		print x["display"], " "
 	end
 end
+
 
 raw_response = get_digg_feed
 response = parse_digg_feed(raw_response)
