@@ -4,10 +4,13 @@
 # object oriented, instantiate modeled classes in separate files
 # push code on GitHub
 
-# 4. display story info for selected tags
-# class to display selected stories
-# 5. ask user if they'd like to make a new selection, save their current selection to file, or quit
-# class to communicate with user - same as before?
+# 1. use dig api
+# 2. get story tags and put them in an array
+# 3. present the array of current story tags to the user
+# 4. ask the user to select a tag they're interested in
+# 5. get stories for selected tags
+# 6. display story info for selected tags
+# 7. ask user if they'd like to make a new selection, save their current selection to file, or quit
 
 # 1. use digg api
 
@@ -34,6 +37,7 @@ def get_tags(stories)
 	current_tags = []
 	stories.each do |story|
 		current_tags.push(story["content"]["tags"].first["slug"])
+		# this code is to get ALL of the current tags, not just the primary tag
 		# tag = story["content"]["tags"]
 	 	# 	tag.each do |x|
 	 	# 		current_tags.push(x["slug"])
@@ -41,14 +45,14 @@ def get_tags(stories)
 	current_tags.uniq!
 	current_tags.sort!
 
-	#display currently available story tags
+#3. display currently available story tags
 	puts
 	puts "These are the currently available story tags:"
 	puts current_tags
 	puts
 end
 
-# 3. ask user which tag they are interested in: individual, set or all
+# 4. ask user which tag they are interested in: individual, set or all
 
 def user_select(story)
 	puts "Choose a tag!"
@@ -56,6 +60,8 @@ def user_select(story)
 	puts
 	# if the user enters a tag from the list, find the associated stories and display them
 	# if the user enters an invalid choice ask them to choose again
+	
+### this is where I got stuck ...
 	if choice == "#{story["content"]["tags"].first["slug"]}"
 		puts "Title: #{story["content"]["title"]}"
 	else
@@ -64,21 +70,25 @@ def user_select(story)
 	puts
 end
 
-def print_digg_story(story)
-	puts "Title: #{story["content"]["title"]}"
-	puts "Author: #{story["content"]["author"]}" 
-	puts "Description: #{story["content"]["description"]}"
-	puts "Source: #{story["content"]["domain"]}"
-	puts "URL: #{story["content"]["url"]}"
-	puts "Tag: #{story["content"]["tags"].first["slug"]}"
-end
+# 5. get stories
+# 6. display stories
+# 7. ask user if they'd like to save current selection, make a new selection or quit
+
+# def print_digg_story(story)
+# 	puts "Title: #{story["content"]["title"]}"
+# 	puts "Author: #{story["content"]["author"]}" 
+# 	puts "Description: #{story["content"]["description"]}"
+# 	puts "Source: #{story["content"]["domain"]}"
+# 	puts "URL: #{story["content"]["url"]}"
+# 	puts "Tag: #{story["content"]["tags"].first["slug"]}"
+# end
 
 raw_response = get_digg_feed
 response = parse_digg_feed(raw_response)
 
 get_tags(response["data"]["feed"])
 user_select(response["data"]["feed"])
-print_digg_stories(response["data"]["feed"])
+# print_digg_stories(response["data"]["feed"])
 
 
 # def print_tags(story)
