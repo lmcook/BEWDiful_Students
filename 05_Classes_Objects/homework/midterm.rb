@@ -54,18 +54,28 @@ end
 
 # 4. ask user which tag they are interested in: individual, set or all
 
-def user_select(story)
+def user_select(stories)
 	puts "Choose a tag!"
 	choice = gets.chomp
 	puts
 	# if the user enters a tag from the list, find the associated stories and display them
 	# if the user enters an invalid choice ask them to choose again
-	
-### this is where I got stuck ...
-	if choice == "#{story["content"]["tags"].first["slug"]}"
-		puts "Title: #{story["content"]["title"]}"
+	matching_stories = stories.select {
+		|s| s["content"]["tags"].first["slug"] == choice
+	}
+
+	if matching_stories.length > 0
+		matching_stories.each do |story|
+			puts "Title: #{story["content"]["title"]}"
+			puts "Author: #{story["content"]["author"]}" 
+			puts "Description: #{story["content"]["description"]}"
+			puts "Source: #{story["content"]["domain"]}"
+			puts "URL: #{story["content"]["url"]}"
+			puts "Tag: #{story["content"]["tags"].first["slug"]}"
+			puts
+		end
 	else
-		puts "Please choose a tag in the list."
+		puts "Please choose a tag from the list."
 	end
 	puts
 end
@@ -109,10 +119,14 @@ user_select(response["data"]["feed"])
 # 	end
 # end
 
-
 # print_digg_tags(response["data"]["feed"])
 
-
+# if choice == "#{story["content"]["tags"].first["slug"]}"
+# 	puts "Title: #{story["content"]["title"]}"
+# else
+# 	puts "Please choose a tag in the list."
+# end
+# puts
 
 
 
