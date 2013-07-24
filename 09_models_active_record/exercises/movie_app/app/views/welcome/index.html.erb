@@ -1,11 +1,21 @@
-<h1>Welcome to the Movie App!</h1>
+<h1>Welcome to Lynn's Movie App!</h1>
 
 <p>Please check out the catalogue of movies:</p>
-
-<%= @movies.each do |movie| %>
-      
-        <p><%= movie.title %></br>
-        <%= movie.description %></br>
-        <%= movie.year_released %></p>
-        
-<% end %>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Year Released</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @movies.each do |movie| %>
+		<tr>  
+		    <td><%= movie.title %></td>
+	        <td><%= movie.description %></td>
+	        <td><%= movie.year_released %></td>
+	    </tr> 
+		<% end %>
+	</tbody>
+</table>

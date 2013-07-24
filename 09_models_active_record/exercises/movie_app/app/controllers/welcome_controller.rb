@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
 	def index
-		@movies = Movies.all
+		@movies = Movie.all
 	end
 	
 end
