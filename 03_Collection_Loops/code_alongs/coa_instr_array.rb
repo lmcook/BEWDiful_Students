@@ -10,6 +10,7 @@
 # Show BANG Methods #sort!, #uniq!, #shuffle!, reverse! 
 # Show join, to_s
 # Show split from string
+<<<<<<< HEAD
 
 dogs = []
 puts dogs.class
@@ -33,3 +34,5 @@ puts dogs.length
 # returns true if enum array contains no elements
 puts dogs.empty?
 
+=======
+>>>>>>> teacher/master

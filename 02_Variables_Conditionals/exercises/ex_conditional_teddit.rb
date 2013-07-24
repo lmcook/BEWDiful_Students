@@ -8,6 +8,7 @@
 #For example:
 # "Cats frolic despite tuna shortage" should give you 5 times the upvotes!
 
+<<<<<<< HEAD
 def welcome_user
 	puts "Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!\nWhat's your story?"	
 end
@@ -33,3 +34,5 @@ end
 welcome_user
 title = gets.chomp.downcase
 print_story(title.capitalize, 0)
+=======
+>>>>>>> teacher/master

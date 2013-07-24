@@ -2,6 +2,7 @@ Lynn Cook's Learning Blog
 for
 Back-End Web Development
 
+<<<<<<< HEAD
 Wed 3 Jul 2013
 
 Arrays
@@ -99,6 +100,8 @@ write in pseudo code, very straightforward ordinary language
 think about edge cases, things that might go wrong
 
 
+=======
+>>>>>>> teacher/master
 25 June 2013
 
 making and running a .sh script
@@ -184,3 +187,7 @@ notes - Ruby on Rails
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> teacher/master

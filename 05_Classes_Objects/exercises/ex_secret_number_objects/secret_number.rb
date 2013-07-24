@@ -38,6 +38,7 @@
 # In creating your game, make sure it has arrays, hashes and all functionality is wrapped in methods.
 # Add helpful comments to your code to document what each section does.
 # 
+<<<<<<< HEAD
 # Tips: Copy paste your code from homework 1 where necessary. 
 
 class Main
@@ -134,3 +135,6 @@ puts secret_number
 # puts "Okay"
 # sn.generate
 # puts "The new secret number is #{sn.reveal}."
+=======
+# Tips: Copy paste your code from homework 1 where necessary. 
+>>>>>>> teacher/master

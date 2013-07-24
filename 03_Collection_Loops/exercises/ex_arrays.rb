@@ -11,6 +11,7 @@ def ___(*arguments)
 end
 
 # Create an empty array named categories using a literal
+<<<<<<< HEAD
 categories = []
 assert_equal categories, []
 
@@ -22,17 +23,38 @@ assert_equal categories, []
 categories.push ("Music")
 categories << ("Weather")
 categories.unshift ("Florida")
+=======
+categories = ___
+assert_equal categories, []
+
+# Create an empty array named categories using Array's #new method
+categories = ___
+assert_equal categories, []
+
+# Add 3 stories to the categories array. Each time using a different method.
+categories.___("Music")
+categories.___("Weather")
+categories.___("Florida")
+>>>>>>> teacher/master
 assert_equal ["Florida", "Music", "Weather"], categories.sort
 
 # Ensure only unique categories get stored
 categories << "Florida"
+<<<<<<< HEAD
 categories.uniq!
+=======
+categories.___!
+>>>>>>> teacher/master
 assert_equal ["Florida", "Music", "Weather"], categories.sort
 
 # Write a conditional that adds "Family" to the category list if it includes both Animals, and Shopping
 categories << "Animals" 
 
+<<<<<<< HEAD
 if categories.include? ("Animals") && categories.include? ("Shopping")
+=======
+if ___
+>>>>>>> teacher/master
   categories << "Family" 
 end
 
@@ -41,7 +63,11 @@ assert_equal(false, categories.include?("Family"))
 categories << "Shopping" 
 
 #repeat check here
+<<<<<<< HEAD
 if categories.include? ("Animals") && categories.include? ("Shopping")
+=======
+if ___
+>>>>>>> teacher/master
   categories << "Family" 
 end
 

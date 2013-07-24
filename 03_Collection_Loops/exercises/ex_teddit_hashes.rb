@@ -14,6 +14,7 @@
 # Use a loop, so that your program continues to ask a user for stories until they chose to quit. ("Would you like to add another story? Enter 'y' or 'n'")
 # Once the user is finished with entering their stories, use .each to print each story in the stories array. 
 #
+<<<<<<< HEAD
 def welcome_user
 	puts "Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!\nWhat's your story?"	
 end
@@ -42,3 +43,6 @@ story = {}
 welcome_user
 title = gets.chomp.downcase
 print_story(title.capitalize, 0)
+=======
+#
+>>>>>>> teacher/master

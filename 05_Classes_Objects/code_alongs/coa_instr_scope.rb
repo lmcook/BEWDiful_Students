@@ -1,6 +1,7 @@
 #Explaining: Variable Scope. 
 # methods create scope
 
+<<<<<<< HEAD
 # chant = "Go Yankees!"
 
 # def shout
@@ -10,6 +11,17 @@
 # end
 
 # shout
+=======
+chant = "Go Yankees!"
+
+def shout
+  puts "About to shout"
+  puts chant.upcase
+  puts "My throat hurts"
+end
+
+shout
+>>>>>>> teacher/master
 
 #Anything you want to use has to be passed inject
 #####################################################################################################
@@ -120,6 +132,7 @@
 # puts "Cars have #{Car::WHEELS} wheels"
 
 # THERE IS RARELY A REASON TO USE THIS TYPE OF VARIABLE!
+<<<<<<< HEAD
 ###################################################################################################
 #####################################################################################################
 #####################################################################################################
@@ -150,3 +163,35 @@ busy_body = Busybody.new
 nosy.look_around
 bad_boy.tamper
 busy_body.look_around
+=======
+#####################################################################################################
+#####################################################################################################
+#####################################################################################################
+
+# $sharing_too_much = "We're all friends here"
+# class Nosy
+#   def look_around
+#     puts $sharing_too_much
+#   end
+# end
+
+# class BadBoy
+#   def tamper
+#     $sharing_too_much = "You look fat in those jeans"
+#   end
+# end
+
+# class Busybody
+#   def look_around
+#     puts $sharing_too_much
+#   end
+# end
+
+# nosy = Nosy.new
+# bad_boy = BadBoy.new
+# busy_body = Busybody.new
+
+# nosy.look_around
+# bad_boy.tamper
+# busy_body.look_around
+>>>>>>> teacher/master
