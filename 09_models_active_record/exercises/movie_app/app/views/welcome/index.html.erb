@@ -1,0 +1,11 @@
+<h1>Welcome to the Movie App!</h1>
+
+<p>Please check out the catalogue of movies:</p>
+
+<%= @movies.each do |movie| %>
+      
+        <p><%= movie.title %></br>
+        <%= movie.description %></br>
+        <%= movie.year_released %></p>
+        
+<% end %>
