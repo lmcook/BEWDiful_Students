@@ -1,0 +1,33 @@
+body {
+	font-family: monospace;
+	background: #ccc6c3;
+	margin: 2%;
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #000909;	
+}
+
+header, section {
+	background: #ffffff;
+	padding: 1% 2%;
+	color: #ff3f33;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+ul {
+	list-style: none;
+	font-style: bold;
+}
+
+p, li {
+	color: #003366;
+}
+
+li a {
+	text-decoration: none;
+	color: #ff3333;
+}
+li a:hover {
+	background: yellow;
+}
