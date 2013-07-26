@@ -1,0 +1,26 @@
+<% if @movie.errors.any? %>
+<div class='errors'>
+	<p>There were problems creating this movie:</p>
+	<ul>
+	<% @movie.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+
+<% end %>
+
+<%= form_for @movie do |f| %>
+	<p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %></p>
+	<p>
+	<%= f.label :description %><br>
+	<%= f.text_area :description %></p>
+	<p>
+	<%= f.label :year_released %><br>
+	<%= f.text_field :year_released %></p>
+	<p>
+	<%= f.submit %> or <%= link_to 'Cancel', movies_path %></p>
+
+<% end %>

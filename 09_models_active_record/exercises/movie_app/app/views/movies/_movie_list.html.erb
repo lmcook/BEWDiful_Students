@@ -1,0 +1,8 @@
+<ul>
+	<% @movies.each do |movie| %>
+	<li>
+		<%= movie.title %>
+		<%= link_to 'Edit', edit_movie_path(movie) %>
+	</li>
+	<% end %>
+</ul>
