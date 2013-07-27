@@ -1,11 +1,28 @@
 class MoviesController < ApplicationController
-	before_action :find_movie, :only => [:edit, :update]
+	before_action :find_movie, :only => [:edit, :update, :show]
+	
 	def index
 		@movies = Movie.all
 	end
 
 	def search
 		@movies = Movie.where("title like ?", "%#{params[:search]}%")
+	end
+
+	def new
+		@movie = Movie.new
+	end
+
+	def show
+	end
+
+	def create
+		@movie = Movie.new permitted_attributes
+		if @movie.save
+			redirect_to movies_path
+		else
+			render 'new'
+		end
 	end
 
 	def update

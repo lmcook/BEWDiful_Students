@@ -2,7 +2,9 @@
 	<% @movies.each do |movie| %>
 	<li>
 		<%= movie.title %>
-		<%= link_to 'Edit', edit_movie_path(movie) %>
+		<%= movie.year_released %>
+		<%= link_to 'Edit', edit_movie_path(movie) %> 
+		<%= link_to 'Show', movie %>
 	</li>
 	<% end %>
 </ul>

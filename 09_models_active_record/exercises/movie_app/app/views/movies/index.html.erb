@@ -1,11 +1,18 @@
-<h1>Welcome to Lynn's Movie App!</h1>
+<header>
+	<h1>Welcome to Lynn's Movie App!</h1>
+</header>
 
-<p>Check out the catalogue of movies.</p>
-<p>You can also search for a movie ...</p>
+<section>
+	<p>You can check out the catalogue of movies,<br>
+	search for a movie ...
 
-<%= form_tag search_path do %>
+	<%= form_tag search_path do %>
 	<%= text_field_tag 'search'%>
 	<%= submit_tag 'Go' %>
-<% end %>
+	<% end %>
+	<br>
+	or <%= link_to 'add a movie to the catalogue!', new_movie_path %></p>
 
-<%= render 'movie_list' %>
+	<%= render 'movie_list' %>
+
+</section>
