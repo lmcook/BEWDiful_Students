@@ -1,0 +1,12 @@
+<h1>make a new url</h1>
+
+<p>Enter a url and I will generate a random link for you!</p>
+
+<%= form_for @url do |f| %>
+	<p>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	</p>
+	<%= f.submit %>
+<% end %>
+

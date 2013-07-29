@@ -1,0 +1,14 @@
+<h1>ritly</h1>
+
+
+
+<p>Here's a list of urls!</p>
+
+<ul>
+	<% @urls.each do |url| %>
+		<li>
+			<%= url.url %>
+			<%= url.random_url %>
+		</li>
+	<% end %>
+</ul>
