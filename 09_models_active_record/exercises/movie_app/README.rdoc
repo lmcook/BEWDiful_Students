@@ -26,3 +26,17 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Matthew would like a category for where seen and with whom etc
+also,
+star ratings done his way
+notes
+category which is a link to the IMDB page
+display title and title to sort like "Leopard, The", "House in the Country, A"
+
+movie books
+sort by director
+sort by year
+public and private comments
+review and personal stories (well not that but similar)
+
