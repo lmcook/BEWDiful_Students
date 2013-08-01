@@ -1,8 +1,9 @@
 MovieApp::Application.routes.draw do
   
+  devise_for :users
   resources :movies
 
-  root 'welcome#index'
+  root 'movies#index'
 
   post '/movies/search' => 'movies#search', :as => :search
   

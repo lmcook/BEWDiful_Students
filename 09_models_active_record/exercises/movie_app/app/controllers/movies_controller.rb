@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 	before_action :find_movie, :only => [:edit, :update, :show]
+
+	before_action :authenticate_user!, :only => [:new]
 	
 	def index
 		@movies = Movie.all
@@ -19,7 +21,7 @@ class MoviesController < ApplicationController
 	def create
 		@movie = Movie.new permitted_attributes
 		if @movie.save
-			redirect_to movies_path
+			redirect_to movies_path, :notice => "your movie has been added!"
 		else
 			render 'new'
 		end

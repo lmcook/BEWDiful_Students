@@ -1,6 +1,7 @@
 <ul>
-	<% sort_by_title = @movies.sort_by! {|m| m[:title]} %>
-	<% sort_by_title.each do |movie| %>
+
+	<% sort_by_year_released = @movies.sort_by! {|m| m[:year_released]} %>
+	<% sort_by_year_released.each do |movie| %>
 	<li>
 		<%= movie.title %>
 		<%= movie.year_released %>

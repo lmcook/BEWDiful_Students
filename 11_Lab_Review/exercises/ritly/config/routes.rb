@@ -1,4 +1,5 @@
 Ritly::Application.routes.draw do
+  devise_for :users
   resources :urls
   
   root 'urls#index'

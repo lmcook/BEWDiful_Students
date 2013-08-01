@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class = "content">
+	<p>
+	<% if current_user %>
+	<%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+	<% else %>
+	<%= link_to 'Sign in', new_user_session_path %>
+	<% end %>
+	</p>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 <%= yield %>
-
+	
+	<footer>
+		<p>Lynn's Movie App : <%= link_to 'Home', movies_path %></p>
+	</footer>
+	</div>
 </body>
 </html>

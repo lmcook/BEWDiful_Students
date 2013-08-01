@@ -2,12 +2,9 @@ body {
 	font-family: monospace;
 	background: #ccc6c3;
 	margin: 2%;
-	border-style: dashed;
-	border-width: 2px;
-	border-color: #000909;	
 }
 
-header, section {
+.content {
 	background: #ffffff;
 	padding: 1% 2%;
 	color: #ff3f33;
@@ -30,4 +27,11 @@ li a {
 }
 li a:hover {
 	background: yellow;
+}
+
+footer {
+	margin-top: 5%;
+	border-top: solid;
+	border-width: 2px;
+	border-color: #003366;
 }
