@@ -1,0 +1,27 @@
+<h1>Rewsly - all your news in one place</h1>
+
+<h2><%= @story.headline %></h2>
+
+<p>
+  <%= @story.content %>
+</p>
+
+<p>
+	<em>Author: <%= @story.user %></em>
+</p>
+
+<h3>comments</h3>
+<p>
+	<ul>
+		<% @story.comments.each do |comment| %>
+			<li><%= comment.content %></li>
+
+		<% end %>
+
+	</ul>	
+
+</p>
+
+<p>
+<%= link_to 'Add a comment', new_story_comment_path(@story) %>
+</p>
